@@ -1,5 +1,7 @@
 const express = require('express');
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
+const PORT = require(`./config/${process.env.NODE_ENV}`).PORT // based on NODE environment, use that environment's respective configuration
+//NODE_ENV=production node server.js in your terminal window
 const app = express();
 
 const counter = {
